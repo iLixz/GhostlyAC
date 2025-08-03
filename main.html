@@ -1,64 +1,175 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>GhostlyAC - Página Principal</title>
-  <style>
-    body {
-      margin: 0;
-      height: 100vh;
-      background: linear-gradient(135deg, #001f4d, #000000);
-      display: flex;
-      justify-content: center;
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>GhostlyAC - Dashboard</title>
+<style>
+  /* Reset y básico */
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #001f4d, #000000);
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  /* Barra superior */
+  header {
+    background: rgba(0,0,0,0.8);
+    padding: 15px 30px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 20px;
+    border-bottom: 2px solid #00aaff;
+  }
+  header .user-info {
+    font-weight: 600;
+    font-size: 16px;
+    color: #00cfff;
+  }
+  header button {
+    background-color: #00aaff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  header button:hover {
+    background-color: #008ecc;
+  }
+  /* Contenido principal */
+  main {
+    flex-grow: 1;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  main h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    color: #00cfff;
+    text-shadow: 0 0 8px #00cfff;
+  }
+  main p {
+    font-size: 18px;
+    margin-bottom: 40px;
+    max-width: 600px;
+    text-align: center;
+  }
+  /* Planes */
+  .plans {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .plan {
+    background: rgba(0,0,0,0.75);
+    border: 2px solid #00aaff;
+    border-radius: 12px;
+    padding: 25px 30px;
+    width: 250px;
+    box-shadow: 0 0 15px #00aaff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease;
+  }
+  .plan:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px #00e0ff;
+  }
+  .plan h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #00cfff;
+  }
+  .plan p {
+    font-size: 16px;
+    margin-bottom: 25px;
+    text-align: center;
+  }
+  .price {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 25px;
+    color: #00e0ff;
+  }
+  .plan button {
+    background-color: #00aaff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease;
+  }
+  .plan button:hover {
+    background-color: #008ecc;
+  }
+  /* Responsive */
+  @media (max-width: 800px) {
+    .plans {
+      flex-direction: column;
       align-items: center;
-      font-family: Arial, sans-serif;
-      color: white;
-      text-align: center;
     }
-
-    .main-container {
-      background-color: rgba(0, 0, 0, 0.75);
-      border: 2px solid #00aaff;
-      border-radius: 16px;
-      padding: 40px;
-      box-shadow: 0 0 20px #00aaff;
+    .plan {
+      width: 80%;
     }
-
-    h1 {
-      font-size: 42px;
-      color: #00cfff;
-      margin-bottom: 15px;
-      text-shadow: 0 0 10px #00cfff;
-    }
-
-    p {
-      font-size: 18px;
-      color: #dddddd;
-    }
-
-    .btn-logout {
-      margin-top: 25px;
-      padding: 12px 24px;
-      background-color: #00aaff;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      font-size: 16px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-
-    .btn-logout:hover {
-      background-color: #008ecc;
-    }
-  </style>
+  }
+</style>
 </head>
 <body>
-  <div class="main-container">
-    <h1>Bienvenido a GhostlyAC</h1>
-    <p>Has ingresado correctamente.</p>
-    <button class="btn-logout" onclick="location.href='index.html'">Cerrar sesión</button>
-  </div>
+
+<header>
+  <div class="user-info">Usuario: <strong>Invitado</strong></div>
+  <button onclick="cerrarSesion()">Cerrar sesión</button>
+</header>
+
+<main>
+  <h1>GhostlyAC</h1>
+  <p>Elige el plan que mejor se adapte a tus necesidades y comienza a proteger tu juego contra trampas.</p>
+  <section class="plans">
+    <div class="plan">
+      <h2>Básico</h2>
+      <p>Protección básica contra trampas y acceso limitado.</p>
+      <div class="price">$5 / mes</div>
+      <button onclick="alert('Elegiste el plan Básico')">Elegir</button>
+    </div>
+    <div class="plan">
+      <h2>Pro</h2>
+      <p>Funciones avanzadas y soporte prioritario.</p>
+      <div class="price">$10 / mes</div>
+      <button onclick="alert('Elegiste el plan Pro')">Elegir</button>
+    </div>
+    <div class="plan">
+      <h2>Premium</h2>
+      <p>Todo incluido con actualizaciones exclusivas.</p>
+      <div class="price">$20 / mes</div>
+      <button onclick="alert('Elegiste el plan Premium')">Elegir</button>
+    </div>
+  </section>
+</main>
+
+<script>
+  function cerrarSesion() {
+    // Simplemente volvemos al index.html que es la página de registro
+    window.location.href = 'index.html';
+  }
+</script>
+
 </body>
 </html>
