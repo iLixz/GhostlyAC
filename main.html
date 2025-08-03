@@ -17,22 +17,49 @@
       text-align: center;
     }
 
+    .main-container {
+      background-color: rgba(0, 0, 0, 0.75);
+      border: 2px solid #00aaff;
+      border-radius: 16px;
+      padding: 40px;
+      box-shadow: 0 0 20px #00aaff;
+    }
+
     h1 {
-      font-size: 48px;
+      font-size: 42px;
       color: #00cfff;
+      margin-bottom: 15px;
       text-shadow: 0 0 10px #00cfff;
-      margin-bottom: 20px;
     }
 
     p {
-      font-size: 24px;
+      font-size: 18px;
+      color: #dddddd;
+    }
+
+    .btn-logout {
+      margin-top: 25px;
+      padding: 12px 24px;
+      background-color: #00aaff;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-logout:hover {
+      background-color: #008ecc;
     }
   </style>
 </head>
 <body>
-  <div>
+  <div class="main-container">
     <h1>Bienvenido a GhostlyAC</h1>
-    <p>Esta es la página principal después del registro.</p>
+    <p>Has ingresado correctamente al sistema.</p>
+    <button class="btn-logout" onclick="location.href='index.html'">Cerrar sesión</button>
   </div>
 </body>
 </html>
+
