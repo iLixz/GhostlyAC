@@ -3,15 +3,36 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>GhostlyAC - Ojo animado</title>
+<title>GhostlyAC - Registro</title>
 <style>
+  body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(135deg, #001f4d, #000000);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    color: white;
+  }
+
+  .register-box {
+    background: rgba(0,0,0,0.75);
+    border: 2px solid #00aaff;
+    border-radius: 12px;
+    padding: 30px 40px;
+    width: 320px;
+    box-shadow: 0 0 15px #00aaff;
+    text-align: center;
+  }
+
   .eye {
     width: 80px;
     height: 80px;
     margin-bottom: 15px;
   }
 
-  /* Animación para la apertura y cierre */
+  /* Animación para la apertura y cierre del párpado */
   @keyframes blink {
     0%, 100% { transform: scaleY(1); }
     50% { transform: scaleY(0.1); }
@@ -21,11 +42,48 @@
     transform-origin: center;
     animation: blink 3s infinite ease-in-out;
   }
+
+  /* Estilos para el formulario */
+  input[type="text"],
+  input[type="email"],
+  input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0 20px 0;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+  }
+
+  button {
+    background-color: #00aaff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+  }
+
+  button:hover {
+    background-color: #008ecc;
+  }
+
+  h1 {
+    margin-bottom: 25px;
+    font-weight: 700;
+    font-size: 28px;
+    color: #00cfff;
+    text-shadow: 0 0 8px #00cfff;
+  }
 </style>
 </head>
-<body style="background: linear-gradient(135deg, #001f4d, #000000); display:flex; justify-content:center; align-items:center; height:100vh; color:white; font-family: Arial, sans-serif;">
-  <div style="text-align:center; background: rgba(0,0,0,0.75); border: 2px solid #00aaff; border-radius: 12px; padding: 30px 40px; width: 320px; box-shadow: 0 0 15px #00aaff;">
-    <!-- SVG ojo con animación -->
+<body>
+  <div class="register-box">
+    <!-- Ojo con párpado animado -->
     <svg class="eye" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
       <!-- Contorno del ojo -->
       <path d="M4 32C12 12 52 12 60 32C52 52 12 52 4 32Z" stroke="#222" stroke-width="4" fill="#111" />
@@ -33,17 +91,17 @@
       <circle cx="32" cy="32" r="10" fill="#555" />
       <!-- Pupila -->
       <circle cx="32" cy="32" r="5" fill="#000" />
-      <!-- Párpado animado (cubre el ojo al cerrar) -->
-      <rect class="eyelid" x="4" y="12" width="56" height="40" fill="#111" />
+      <!-- Párpado animado -->
+      <ellipse class="eyelid" cx="32" cy="32" rx="28" ry="20" fill="#111" />
     </svg>
 
-    <h1 style="color:#00cfff; text-shadow: 0 0 8px #00cfff; margin-top: 15px;">GhostlyAC</h1>
-    
-    <form action="main.html" method="get" style="margin-top: 20px;">
-      <input type="text" placeholder="Nombre de usuario" required style="width:100%; padding:10px; margin:10px 0 20px 0; border:none; border-radius:6px; font-size:16px;" />
-      <input type="email" placeholder="Correo electrónico" required style="width:100%; padding:10px; margin:10px 0 20px 0; border:none; border-radius:6px; font-size:16px;" />
-      <input type="password" placeholder="Contraseña" required style="width:100%; padding:10px; margin:10px 0 20px 0; border:none; border-radius:6px; font-size:16px;" />
-      <button type="submit" style="background:#00aaff; border:none; padding:12px 20px; border-radius:8px; color:white; font-weight:bold; font-size:16px; cursor:pointer; width:100%; transition: background-color 0.3s ease;">Registrarse</button>
+    <h1>GhostlyAC</h1>
+
+    <form action="main.html" method="get">
+      <input type="text" placeholder="Nombre de usuario" required />
+      <input type="email" placeholder="Correo electrónico" required />
+      <input type="password" placeholder="Contraseña" required />
+      <button type="submit">Registrarse</button>
     </form>
   </div>
 </body>
