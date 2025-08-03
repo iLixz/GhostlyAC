@@ -41,4 +41,45 @@
 
     .register-box input[type="text"],
     .register-box input[type="email"],
-    .register-box inpu
+    .register-box input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0 20px 0;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+    }
+
+    .register-box button {
+      background-color: #00aaff;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 8px;
+      color: white;
+      font-weight: bold;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      width: 100%;
+    }
+
+    .register-box button:hover {
+      background-color: #008ecc;
+    }
+  </style>
+</head>
+<body>
+  <div class="register-box">
+    <!-- LOGO DE EJEMPLO -->
+    <img src="https://i.imgur.com/zT2WbEs.png" alt="Logo GhostlyAC" />
+    
+    <h1>GhostlyAC</h1>
+    <form action="main.html" method="get">
+      <input type="text" placeholder="Nombre de usuario" required />
+      <input type="email" placeholder="Correo electrónico" required />
+      <input type="password" placeholder="Contraseña" required />
+      <button type="submit">Registrarse</button>
+    </form>
+  </div>
+</body>
+</html>
