@@ -61,4 +61,48 @@
     background-color: #00aaff;
     border: none;
     padding: 12px 20px;
-    border-rad
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+  }
+
+  button:hover {
+    background-color: #008ecc;
+  }
+
+  h1 {
+    margin-bottom: 25px;
+    font-weight: 700;
+    font-size: 28px;
+    color: #00cfff;
+    text-shadow: 0 0 8px #00cfff;
+  }
+</style>
+</head>
+<body>
+  <div class="register-box">
+    <!-- Ojo con pupila animada -->
+    <svg class="eye" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- Contorno del ojo -->
+      <path d="M4 32C12 12 52 12 60 32C52 52 12 52 4 32Z" stroke="#222" stroke-width="4" fill="#111" />
+      <!-- Iris -->
+      <circle cx="32" cy="32" r="10" fill="#555" />
+      <!-- Pupila animada -->
+      <circle class="pupil" cx="32" cy="32" r="5" fill="#000" />
+    </svg>
+
+    <h1>GhostlyAC</h1>
+
+    <form action="main.html" method="get">
+      <input type="text" placeholder="Nombre de usuario" required />
+      <input type="email" placeholder="Correo electrónico" required />
+      <input type="password" placeholder="Contraseña" required />
+      <button type="submit">Registrarse</button>
+    </form>
+  </div>
+</body>
+</html>
